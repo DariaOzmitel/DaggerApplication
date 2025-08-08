@@ -51,6 +51,7 @@ dependencies {
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.retrofit)
     implementation (libs.dagger)
     kapt (libs.dagger.compiler)
     testImplementation(libs.junit)

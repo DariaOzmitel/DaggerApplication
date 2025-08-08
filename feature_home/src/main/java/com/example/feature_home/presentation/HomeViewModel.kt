@@ -1,15 +1,15 @@
-package com.example.daggerapplication
+package com.example.feature_home.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.feature_home.usecases.GetCardIdsFromServer1UseCase
-import com.example.feature_home.usecases.GetCardIdsFromServer2UseCase
+import com.example.feature_home.domain.usecases.GetCardIdsFromServer1UseCase
+import com.example.feature_home.domain.usecases.GetCardIdsFromServer2UseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class MainViewModel @Inject constructor(
+class HomeViewModel @Inject constructor(
     private val getCardIdsFromServer1UseCase: GetCardIdsFromServer1UseCase,
     private val getCardIdsFromServer2UseCase: GetCardIdsFromServer2UseCase,
 ) : ViewModel() {

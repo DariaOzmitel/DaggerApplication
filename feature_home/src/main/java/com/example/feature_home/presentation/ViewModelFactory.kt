@@ -1,4 +1,4 @@
-package com.example.daggerapplication
+package com.example.feature_home.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

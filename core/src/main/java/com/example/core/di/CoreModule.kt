@@ -1,30 +1,34 @@
 package com.example.core.di
 
-import com.example.core.network.ApiFactoryCard1
-import com.example.core.network.ApiFactoryCard2
-import com.example.core.network.ApiServiceCard1
-import com.example.core.network.ApiServiceCard2
-import com.example.core.repository.RepositoryImpl
-import com.example.feature_home.repository.Repository
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 @Module
-interface CoreModule {
+class CoreModule {
 
-    @Binds
-    fun bindRepository(impl: RepositoryImpl): Repository
+    @Provides
+    @Retrofit1Qualifier
+    fun provideRetrofitServer1(): Retrofit {
+        return Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl(BASE_URL_SERVER_1)
+            .build()
+    }
 
-    companion object {
-        @Provides
-        fun provideApiServiceCard1(): ApiServiceCard1 {
-            return ApiFactoryCard1.apiService
-        }
-
-        @Provides
-        fun provideApiServiceCard2(): ApiServiceCard2 {
-            return ApiFactoryCard2.apiService
-        }
+    @Provides
+    @Retrofit2Qualifier
+    fun provideRetrofitServer2(): Retrofit {
+        return Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl(BASE_URL_SERVER_2)
+            .build()
     }
 }
+
+private const val BASE_URL_SERVER_1 =
+    "https://gist.githubusercontent.com/DariaOzmitel/98f1ff214b6d920c5385b42c1f8046b7/raw/"
+
+private const val BASE_URL_SERVER_2 =
+    "https://gist.githubusercontent.com/DariaOzmitel/0ac72b643e334471183db170a61a49aa/raw/"

@@ -1,6 +1,6 @@
-package com.example.feature_home.usecases
+package com.example.feature_home.domain.usecases
 
-import com.example.feature_home.repository.Repository
+import com.example.feature_home.domain.repository.Repository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

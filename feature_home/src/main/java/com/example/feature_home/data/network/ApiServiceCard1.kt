@@ -1,4 +1,4 @@
-package com.example.core.network
+package com.example.feature_home.data.network
 
 import retrofit2.http.GET
 
