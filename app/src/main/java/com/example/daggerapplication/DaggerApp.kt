@@ -9,13 +9,14 @@ import com.example.daggerapplication.di.DaggerAppComponent
 
 class DaggerApp : Application(), CoreComponentProvider {
     lateinit var appComponent: AppComponent
-    lateinit var coreComponent: CoreComponent
+    private val coreComponent: CoreComponent by lazy {
+        DaggerCoreComponent.create()
+    }
 
     override fun onCreate() {
         super.onCreate()
 
         appComponent = DaggerAppComponent.create()
-        coreComponent = DaggerCoreComponent.create()
     }
 
     override fun provideCoreComponent(): CoreComponent = coreComponent
