@@ -4,10 +4,12 @@ import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Singleton
 
 @Module
 class CoreModule {
 
+    @Singleton
     @Provides
     @Retrofit1Qualifier
     fun provideRetrofitServer1(): Retrofit {
@@ -17,6 +19,7 @@ class CoreModule {
             .build()
     }
 
+    @Singleton
     @Provides
     @Retrofit2Qualifier
     fun provideRetrofitServer2(): Retrofit {

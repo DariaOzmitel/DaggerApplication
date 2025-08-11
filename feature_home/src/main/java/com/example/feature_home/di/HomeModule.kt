@@ -8,6 +8,7 @@ import dagger.Module
 @Module
 interface HomeModule {
 
+    @FeatureScope
     @Binds
     fun bindRepository(impl: RepositoryImpl): Repository
 }
