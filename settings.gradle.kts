@@ -23,3 +23,4 @@ rootProject.name = "Dagger Application"
 include(":app")
 include(":core")
 include(":feature_home")
+include(":database")
