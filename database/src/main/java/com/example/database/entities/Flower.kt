@@ -7,7 +7,8 @@ import androidx.room.PrimaryKey
 data class Flower(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val name: String,
-    val quantity: Int
+    val quantity: Int,
+    val country: String? = null
 )
 
 data class FlowersWithCount(
